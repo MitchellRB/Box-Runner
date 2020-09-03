@@ -7,7 +7,11 @@ public class QuitButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Add removal if on mobile
+        //Disable on mobile and web platforms
+        if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer || Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame

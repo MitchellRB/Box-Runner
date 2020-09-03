@@ -12,18 +12,21 @@ public class KeyboardSelect : MonoBehaviour
     public KeyCode previous;
     public KeyCode select;
 
-    private Button[] buttons;
+    private List<Button> buttons;
     private int selectedIndex;
 
     // Start is called before the first frame update
-    void Start()
+    IEnumerator Start()
     {
-        buttons = gameObject.GetComponentsInChildren<Button>();
+        buttons = new List<Button>();
+        yield return StartCoroutine("GetButtons");
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (buttons.Count == 0) return;
+
         if (Input.GetKeyDown(next))
         {
             selectedIndex++;
@@ -34,8 +37,8 @@ public class KeyboardSelect : MonoBehaviour
             selectedIndex--;
         }
 
-        if (selectedIndex < 0) selectedIndex = buttons.Length - 1;
-        if (selectedIndex >= buttons.Length) selectedIndex = 0;
+        if (selectedIndex < 0) selectedIndex = buttons.Count - 1;
+        if (selectedIndex >= buttons.Count) selectedIndex = 0;
 
         if (Input.GetKeyDown(select))
         {
@@ -46,5 +49,11 @@ public class KeyboardSelect : MonoBehaviour
         {
             arrow.transform.position = buttons[selectedIndex].transform.position + arrowOffset;
         }
+    }
+
+    IEnumerator GetButtons()
+    {
+        yield return new WaitForSecondsRealtime(0.02f);
+        buttons.AddRange(gameObject.GetComponentsInChildren<Button>(false));
     }
 }
