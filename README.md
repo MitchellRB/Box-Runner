@@ -7,3 +7,8 @@
 ## [0.1.0] - 2020-09-03
 ### Added
 - Early main menu
+
+## [0.2.0] - 2020-09-03
+### Added
+- Early player
+- Early lanes
