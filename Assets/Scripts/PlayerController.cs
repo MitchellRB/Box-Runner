@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Limit frame rate
+        Application.targetFrameRate = 60;
+
         lanePosition = startLane;
         canJump = true;
         startYPos = transform.position.y;
@@ -40,7 +43,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (canJump == false)
         {
-            sinCurvePosition += jumpSpeed * Mathf.Deg2Rad;
+            sinCurvePosition += jumpSpeed * Time.deltaTime * Mathf.Deg2Rad;
             Vector3 newPos = new Vector3(Mathf.Lerp(startX, endX, sinCurvePosition / Mathf.PI), startYPos + Mathf.Sin(sinCurvePosition) * jumpHeight, 0);
             transform.position = newPos;
         }

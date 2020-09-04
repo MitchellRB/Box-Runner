@@ -19,8 +19,16 @@ public class KeyboardSelect : MonoBehaviour
     // Start is called before the first frame update
     IEnumerator Start()
     {
+        // Limit frame rate
+        Application.targetFrameRate = 60;
+
         buttons = new List<Button>();
         yield return StartCoroutine("GetButtons");
+
+        if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            arrow.SetActive(false);
+        }
     }
 
     // Update is called once per frame

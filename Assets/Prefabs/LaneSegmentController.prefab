@@ -48,8 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74154e7fcaf0fb4fb92df8bc41cde77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrollSpeed: 25
   destroyThreshold: -30
-  respawnDistance: 160
+  respawnDistance: 170
 --- !u!1001 &1153139240489015586
 PrefabInstance:
   m_ObjectHideFlags: 0

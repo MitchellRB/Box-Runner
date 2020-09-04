@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LaneControlBehaviour : MonoBehaviour
 {
+    public float scrollSpeed;
     public float destroyThreshold = -30;
     public float respawnDistance;
 
@@ -14,16 +15,16 @@ public class LaneControlBehaviour : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (transform.position.z < destroyThreshold)
         {
-            Vector3 resPos = new Vector3(0, 0, respawnDistance);
+            Vector3 resPos = new Vector3(0, 0, transform.position.z - destroyThreshold + respawnDistance);
             transform.position = resPos;
         }
         else
         {
-            transform.Translate(0, 0, -0.25f);
+            transform.Translate(0, 0, scrollSpeed * Time.fixedDeltaTime * -1);
         }
     }
 }
