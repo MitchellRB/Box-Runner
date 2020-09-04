@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[DisallowMultipleComponent]
 public class KeyboardSelect : MonoBehaviour
 {
     public GameObject arrow;

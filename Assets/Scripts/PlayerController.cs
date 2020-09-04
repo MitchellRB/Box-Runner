@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerInputController))]
 public class PlayerController : MonoBehaviour
 {
     public int lanes = 5;
@@ -31,22 +32,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Jump input
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            JumpLeft();
-        }
-
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            JumpRight();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            JumpUp();
-        }
-
         // Jump movement
         if (sinCurvePosition >= Mathf.PI && canJump == false)
         {
