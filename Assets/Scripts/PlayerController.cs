@@ -5,30 +5,102 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public int lanes = 5;
-    public int start = 2;
-    private int position;
+    public int startLane = 2;
+
+    public float jumpSpeed;
+    public float jumpHeight;
+
+    private int lanePosition;
     private bool canJump;
+
+    private float sinCurvePosition;
+    private float startYPos;
+
+    private float startX;
+    private float endX;
 
     // Start is called before the first frame update
     void Start()
     {
-        position = start;
+        lanePosition = startLane;
         canJump = true;
+        startYPos = transform.position.y;
+        startX = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && position > 0 && canJump)
+        // Jump input
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            transform.position = new Vector3(transform.position.x - 4, transform.position.y, transform.position.z);
-            position--;
+            JumpLeft();
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow) && position < lanes - 1 && canJump)
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            transform.position = new Vector3(transform.position.x + 4, transform.position.y, transform.position.z);
-            position++;
+            JumpRight();
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            JumpUp();
+        }
+
+        // Jump movement
+        if (sinCurvePosition >= Mathf.PI && canJump == false)
+        {
+            sinCurvePosition = Mathf.PI;
+            canJump = true;
+        }
+        else if (canJump == false)
+        {
+            sinCurvePosition += jumpSpeed * Mathf.Deg2Rad;
+            Vector3 newPos = new Vector3(Mathf.Lerp(startX, endX, sinCurvePosition / Mathf.PI), startYPos + Mathf.Sin(sinCurvePosition) * jumpHeight, 0);
+            transform.position = newPos;
+        }
+
+        // Keep from falling through lane floor
+        if (transform.position.y < startYPos) transform.position = new Vector3(transform.position.x, startYPos, transform.position.z);
+    }
+
+    void StartJump()
+    {
+        canJump = false;
+        sinCurvePosition = 0;
+    }
+
+    void SetJumpEndpoints(float xs, float xe)
+    {
+        startX = transform.position.x + xs;
+        endX = transform.position.x + xe;
+    }
+
+    // Jump functions
+
+    public void JumpLeft()
+    {
+        if (lanePosition == 0 || !canJump) return;
+
+        SetJumpEndpoints(0, -4);
+        lanePosition--;
+        StartJump();
+    }
+
+    public void JumpRight()
+    {
+        if (lanePosition == lanes - 1 || !canJump) return;
+
+        SetJumpEndpoints(0, 4);
+        lanePosition++;
+        StartJump();
+    }
+
+    public void JumpUp()
+    {
+        if (!canJump) return;
+
+        SetJumpEndpoints(0, 0);
+        StartJump();
     }
 }
