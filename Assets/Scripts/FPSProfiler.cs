@@ -7,15 +7,36 @@ public class FPSProfiler : MonoBehaviour
 {
     public Text displayText;
 
+    public int maxFrames = 7;
+    private int frames;
+    private List<float> frameTimes;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        frames = 0;
+        frameTimes = new List<float>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        displayText.text = "FPS: " + (1 / Time.unscaledDeltaTime).ToString();
+        frameTimes.Add(Time.unscaledDeltaTime);
+        if (frames < maxFrames)
+        {
+            frames++;
+        }
+        else
+        {
+            frameTimes.RemoveAt(0);
+        }
+
+        float total = 0;
+        foreach (var t in frameTimes)
+        {
+            total += t;
+        }
+
+        displayText.text = "FPS: " + (1 / (total / frames));
     }
 }

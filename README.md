@@ -2,6 +2,19 @@
 
 ## Changelog
 ---
+## [0.4.0] - 2020-09-04
+### Added
+- Migrated from Input Manger to InputSystem
+- Controller support
+- Fog
+
+### Changed
+- Disabled highscore button
+
+### Fixed
+- Set maximum frame rate to 60
+- Movement is framerate-indepedent
+- Fixed jump speed on mobile
 
 ## [0.3.0] - 2020-09-04
 ### Added
