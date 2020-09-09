@@ -11,11 +11,13 @@ public class PlayerCollision : MonoBehaviour
     public Text deathText;
 
     private PlayerController pc;
+    private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
         pc = gameObject.GetComponent<PlayerController>();
+        rb = gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -30,6 +32,7 @@ public class PlayerCollision : MonoBehaviour
         {
             deathText.gameObject.SetActive(true);
             pc.enabled = false;
+            rb.constraints = RigidbodyConstraints.None;
         }
     }
 }

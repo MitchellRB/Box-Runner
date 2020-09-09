@@ -1148,7 +1148,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: '(c) Mitchell Bonham 2020
 
-    Build 202004091445'
+    Build 20200909-1009'
 --- !u!222 &1619597428
 CanvasRenderer:
   m_ObjectHideFlags: 0
