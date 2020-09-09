@@ -1178,6 +1178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be1d12db318c9c49a789d0f103fa923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameFilePath: name.dat
   scoreText: {fileID: 397507860}
   score: 0
 --- !u!114 &1301559271

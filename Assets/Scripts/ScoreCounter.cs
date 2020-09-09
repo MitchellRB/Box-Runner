@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
 
 public class ScoreCounter : MonoBehaviour
 {
+    public string nameFilePath;
+
     public Text scoreText;
 
     public int score;
@@ -35,6 +38,11 @@ public class ScoreCounter : MonoBehaviour
 
     public void SaveScore()
     {
+        // Read name
+        StreamReader reader = new StreamReader(Application.persistentDataPath + nameFilePath);
+        string playerName = reader.ReadToEnd();
+        reader.Close();
+
         // Get score writer and reader
         HighScoreWriter hsw = gameObject.GetComponent<HighScoreWriter>();
         HighScoreReader hsr = gameObject.GetComponent<HighScoreReader>();
@@ -46,10 +54,17 @@ public class ScoreCounter : MonoBehaviour
         {
             ScoreEntry newScore;
             // TODO: Get name from player
-            newScore.name = string.Empty;
-            newScore.name += (char)Random.Range('A', 'Z' + 1);
-            newScore.name += (char)Random.Range('A', 'Z' + 1);
-            newScore.name += (char)Random.Range('A', 'Z' + 1);
+            if (playerName != string.Empty)
+            {
+                newScore.name = playerName;
+            }
+            else
+            {
+                newScore.name = string.Empty;
+                newScore.name += (char)Random.Range('A', 'Z' + 1);
+                newScore.name += (char)Random.Range('A', 'Z' + 1);
+                newScore.name += (char)Random.Range('A', 'Z' + 1);
+            }
 
             newScore.score = score;
 

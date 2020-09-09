@@ -13,7 +13,6 @@ public class CreateScoreFile : MonoBehaviour
     {
         if (!File.Exists(Application.persistentDataPath + filePath))
         {
-            File.Create(Application.persistentDataPath + filePath);
             StreamWriter writer = new StreamWriter(Application.persistentDataPath + filePath);
             for (int i = 0; i < 10; i++)
             {

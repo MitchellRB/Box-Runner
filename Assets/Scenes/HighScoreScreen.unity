@@ -632,27 +632,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'AAA - 1000
+  m_Text: 'NOSCORES
 
-    AAA - 1000
+    NOSCORES
 
-    AAA - 1000
+    NOSCORES
 
-    AAA - 1000
+    NOSCORES
 
-    AAA -
-    1000
+    NOSCORES
 
-    AAA - 1000
+    NOSCORES
 
-    AAA - 1000
+    NOSCORES
 
-    AAA - 1000
+    NOSCORES
 
-    AAA - 1000
+    NOSCORES
 
-    AAA
-    - 1000'
+    NOSCORES'
 --- !u!222 &1160779655
 CanvasRenderer:
   m_ObjectHideFlags: 0

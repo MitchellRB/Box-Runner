@@ -43,9 +43,12 @@ public class PlayerCollision : MonoBehaviour
             rb.constraints = RigidbodyConstraints.None;
             rb.AddTorque(Vector3.left);
             sc.enabled = false;
-            
+
+            if (isDead == false)
+            {
+                SendMessage("SaveScore");
+            }
             isDead = true;
-            SendMessage("SaveScore");
         }
     }
 
