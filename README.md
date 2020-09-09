@@ -2,10 +2,24 @@
 
 ## Changelog
 ---
+## [0.6.0] - 2020-09-09
+### Added
+- Scoreboard
+    - Saves top 10 scores
+    - Currently under random names
+- Short obstacle that can be jumped over
+- Buttons on game over screen
+
+### Changed
+- Reenabled high score button
+
+### Fixed
+- Player physics when colliding with an obstacle
 
 ## [0.5.0] - 2020-09-09
 ### Added
 - Obstacles
+- Lane texture
 
 ### Changed
 - Reduced fog density
