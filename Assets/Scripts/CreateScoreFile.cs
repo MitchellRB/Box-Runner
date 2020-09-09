@@ -17,7 +17,7 @@ public class CreateScoreFile : MonoBehaviour
             StreamWriter writer = new StreamWriter(filePath);
             for (int i = 0; i < 10; i++)
             {
-                writer.WriteLine("AAA,100");
+                writer.WriteLine("AAA,0");
             }
             writer.Close();
         }
