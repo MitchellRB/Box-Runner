@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 46105387}
   - component: {fileID: 46105386}
   - component: {fileID: 46105385}
+  - component: {fileID: 46105390}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -243,6 +244,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &46105390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46105384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7a1326f02c37454ab59ae8b50adda43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filePath: scores.dat
 --- !u!1 &436017664
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 200c1c4346379a448ba857dbd8b3474c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playScene: 
+  playScene: HIghScoreScreen
+  force: 0
 --- !u!114 &436017667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,7 +318,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 436017664}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -911,6 +926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playScene: GameplayScene
+  force: 0
 --- !u!114 &1486894123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1146,9 +1162,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '(c) Mitchell Bonham 2020
-
-    Build 20200909-1009'
+  m_Text: (c) Mitchell Bonham 2020
 --- !u!222 &1619597428
 CanvasRenderer:
   m_ObjectHideFlags: 0
