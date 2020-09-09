@@ -11,10 +11,10 @@ public class CreateScoreFile : MonoBehaviour
     // Create high score file if it does not exist
     void Start()
     {
-        if (!File.Exists(Application.dataPath + filePath))
+        if (!File.Exists(Application.persistentDataPath + filePath))
         {
-            File.Create(Application.dataPath + filePath);
-            StreamWriter writer = new StreamWriter(Application.dataPath + filePath);
+            File.Create(Application.persistentDataPath + filePath);
+            StreamWriter writer = new StreamWriter(Application.persistentDataPath + filePath);
             for (int i = 0; i < 10; i++)
             {
                 writer.WriteLine("AAA,0");
