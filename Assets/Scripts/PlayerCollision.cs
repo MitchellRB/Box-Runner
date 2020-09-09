@@ -38,11 +38,16 @@ public class PlayerCollision : MonoBehaviour
         if (collision.gameObject.CompareTag(obstacleTag))
         {
             deathUI.SetActive(true);
+            // Disable control and unlock rigidbody
             pc.enabled = false;
             rb.constraints = RigidbodyConstraints.None;
             rb.AddTorque(Vector3.left);
             sc.enabled = false;
+            
             isDead = true;
+            SendMessage("SaveScore");
         }
     }
+
+
 }

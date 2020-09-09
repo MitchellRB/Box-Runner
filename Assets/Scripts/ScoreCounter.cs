@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class ScoreCounter : MonoBehaviour
 {
     public Text scoreText;
@@ -30,5 +31,39 @@ public class ScoreCounter : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
+    }
+
+    public void SaveScore()
+    {
+        // Get score writer and reader
+        HighScoreWriter hsw = gameObject.GetComponent<HighScoreWriter>();
+        HighScoreReader hsr = gameObject.GetComponent<HighScoreReader>();
+
+        // Read high score list
+        var scores = hsr.ReadScores();
+
+        if (score > scores[9].score)
+        {
+            ScoreEntry newScore;
+            // TODO: Get name from player
+            newScore.name = string.Empty;
+            newScore.name += (char)Random.Range('A', 'Z' + 1);
+            newScore.name += (char)Random.Range('A', 'Z' + 1);
+            newScore.name += (char)Random.Range('A', 'Z' + 1);
+
+            newScore.score = score;
+
+            // Add new score
+            scores.Add(newScore);
+            scores.Sort(newScore.Compare);
+            if (scores.Count > 10)
+            {
+                scores.RemoveAt(10);
+            }
+
+            // Rewrite scores list
+            hsw.WriteScores(scores);
+        }
+
     }
 }

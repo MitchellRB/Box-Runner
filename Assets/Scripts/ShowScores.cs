@@ -25,6 +25,8 @@ public class ShowScores : MonoBehaviour
 
     public void ChangeDisplay(List<ScoreEntry> entries)
     {
+        entries.Sort(entries[0].Compare);
+
         // Display scores to screen
         StringBuilder sb = new StringBuilder();
         foreach (var item in entries)

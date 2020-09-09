@@ -13,6 +13,8 @@ public class HighScoreWriter : MonoBehaviour
     {
         File.WriteAllText(filePath, string.Empty);
 
+        scores.Sort(scores[0].Compare);
+
         StreamWriter writer = new StreamWriter(filePath);
 
         foreach (var item in scores)

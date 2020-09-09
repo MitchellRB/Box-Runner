@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public struct ScoreEntry
+public struct ScoreEntry : IComparer<ScoreEntry>
 {
     public string name;
     public int score;
 
     static public bool operator<(ScoreEntry a, ScoreEntry b) { return a.score < b.score; }
     static public bool operator>(ScoreEntry a, ScoreEntry b) { return a.score > b.score; }
+    public int Compare(ScoreEntry a, ScoreEntry b) { return b.score - a.score; }
     public override string ToString() { return name + "," + score.ToString(); }
 }
 
