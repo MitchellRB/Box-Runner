@@ -2,6 +2,14 @@
 
 ## Changelog
 ---
+
+## [0.5.0] - 2020-09-09
+### Added
+- Obstacles
+
+### Changed
+- Reduced fog density
+
 ## [0.4.0] - 2020-09-04
 ### Added
 - Migrated from Input Manger to InputSystem
