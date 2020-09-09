@@ -12,6 +12,7 @@ public class PlayerCollision : MonoBehaviour
 
     private PlayerController pc;
     private Rigidbody rb;
+    private ScoreCounter sc;
     private bool isDead;
 
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class PlayerCollision : MonoBehaviour
     {
         pc = gameObject.GetComponent<PlayerController>();
         rb = gameObject.GetComponent<Rigidbody>();
+        sc = gameObject.GetComponent<ScoreCounter>();
         isDead = false;
     }
 
@@ -39,6 +41,7 @@ public class PlayerCollision : MonoBehaviour
             pc.enabled = false;
             rb.constraints = RigidbodyConstraints.None;
             rb.AddTorque(Vector3.left);
+            sc.enabled = false;
             isDead = true;
         }
     }
