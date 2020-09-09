@@ -21,7 +21,7 @@ public class HighScoreReader : MonoBehaviour
 
     public List<ScoreEntry> ReadScores()
     {
-        StreamReader reader = new StreamReader(filePath);
+        StreamReader reader = new StreamReader(Application.dataPath + filePath);
         List<ScoreEntry> scores = new List<ScoreEntry>();
 
         while (!reader.EndOfStream)

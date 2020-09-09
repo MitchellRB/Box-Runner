@@ -11,11 +11,11 @@ public class HighScoreWriter : MonoBehaviour
 
     public void WriteScores(List<ScoreEntry> scores)
     {
-        File.WriteAllText(filePath, string.Empty);
+        File.WriteAllText(Application.dataPath + filePath, string.Empty);
 
         scores.Sort(scores[0].Compare);
 
-        StreamWriter writer = new StreamWriter(filePath);
+        StreamWriter writer = new StreamWriter(Application.dataPath + filePath);
 
         foreach (var item in scores)
         {
