@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3859713152712967974
+--- !u!1 &2685075357994598486
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1518293851865564764}
-  - component: {fileID: 7925606150396412493}
+  - component: {fileID: 2685075357994598488}
+  - component: {fileID: 2685075357994598489}
+  - component: {fileID: 2685075357994598491}
   m_Layer: 0
   m_Name: LaneSpawner
   m_TagString: Untagged
@@ -17,27 +18,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1518293851865564764
+--- !u!4 &2685075357994598488
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3859713152712967974}
+  m_GameObject: {fileID: 2685075357994598486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 170}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7925606150396412493
+--- !u!114 &2685075357994598489
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3859713152712967974}
+  m_GameObject: {fileID: 2685075357994598486}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d75a3c4d751045f4096d3cc5275c7bfe, type: 3}
@@ -46,3 +47,31 @@ MonoBehaviour:
   laneController: {fileID: 4706493029783491183, guid: 0c0a22a46ee9ea34692148b37e05c5f0,
     type: 3}
   segmentLength: 40
+  extraDistance: 30
+--- !u!114 &2685075357994598491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2685075357994598486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf989be34130879469723d71a64eb15f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleList:
+  - spawnObject: {fileID: 5969386774665268275, guid: 30620383b96615e46b017e227f605eb7,
+      type: 3}
+    offset: {x: 0, y: 1.5, z: 0}
+  - spawnObject: {fileID: 2724022497959720085, guid: a21cef923976ead45ad3201ebad2125a,
+      type: 3}
+    offset: {x: 0, y: 0.25, z: 0}
+  spawnPositions:
+  - {x: -8, y: 0, z: 170}
+  - {x: -4, y: 0, z: 170}
+  - {x: 0, y: 0, z: 170}
+  - {x: 4, y: 0, z: 170}
+  - {x: 8, y: 0, z: 170}
+  spwanTimeMin: 0.5
+  spwanTimeMax: 2

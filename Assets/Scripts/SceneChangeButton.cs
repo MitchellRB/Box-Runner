@@ -8,6 +8,8 @@ public class SceneChangeButton : MonoBehaviour
 {
     public string playScene;
 
+    public bool force;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,7 @@ public class SceneChangeButton : MonoBehaviour
 
     public void OnClick()
     {
-        if (playScene != string.Empty && SceneManager.GetActiveScene().name != playScene)
+        if (force || (playScene != string.Empty && SceneManager.GetActiveScene().name != playScene))
         {
             SceneManager.LoadScene(playScene, LoadSceneMode.Single);
         }

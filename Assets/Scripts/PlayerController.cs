@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public int lanes = 5;
     public int startLane = 2;
+    public float laneDistance = 4;
 
     public float jumpSpeed;
     public float jumpHeight;
@@ -70,7 +71,7 @@ public class PlayerController : MonoBehaviour
     {
         if (lanePosition == 0 || !canJump) return;
 
-        SetJumpEndpoints(0, -4);
+        SetJumpEndpoints(0, -laneDistance);
         lanePosition--;
         StartJump();
     }
@@ -79,7 +80,7 @@ public class PlayerController : MonoBehaviour
     {
         if (lanePosition == lanes - 1 || !canJump) return;
 
-        SetJumpEndpoints(0, 4);
+        SetJumpEndpoints(0, laneDistance);
         lanePosition++;
         StartJump();
     }

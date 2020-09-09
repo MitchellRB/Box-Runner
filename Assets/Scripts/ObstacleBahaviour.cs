@@ -9,15 +9,18 @@ public class ObstacleBahaviour : MonoBehaviour
     public float movementSpeed;
     public float destroyPosition;
 
+    private Rigidbody rb;
+
     void Start()
     {
-        
+        rb = gameObject.GetComponent<Rigidbody>();
+
+        rb.AddForce(new Vector3(0, 0, -movementSpeed), ForceMode.VelocityChange);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.Translate(0, 0, movementSpeed * Time.fixedDeltaTime * -1);
 
         if (transform.position.z < destroyPosition)
         {

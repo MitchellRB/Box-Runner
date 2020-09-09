@@ -2,9 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct OffsetObject
+{
+    public GameObject spawnObject;
+    public Vector3 offset;
+}
+
 public class ObstacleSpwaner : MonoBehaviour
 {
-    public List<GameObject> obstacleList;
+    public List<OffsetObject> obstacleList;
 
     public List<Vector3> spawnPositions;
 
@@ -25,7 +32,8 @@ public class ObstacleSpwaner : MonoBehaviour
     {
         if (timer > spwanTime)
         {
-            Instantiate(obstacleList[Random.Range(0, obstacleList.Count)], spawnPositions[Random.Range(0, spawnPositions.Count)],Quaternion.identity);
+            int objectIndex = Random.Range(0, obstacleList.Count);
+            Instantiate(obstacleList[objectIndex].spawnObject, spawnPositions[Random.Range(0, spawnPositions.Count)] + obstacleList[objectIndex].offset,Quaternion.identity);
             NewSpawnTime();
             timer = 0;
         }
