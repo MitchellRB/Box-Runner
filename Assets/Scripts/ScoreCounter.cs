@@ -38,6 +38,10 @@ public class ScoreCounter : MonoBehaviour
 
     public void SaveScore()
     {
+        // Cannot do file IO on web
+#if UNITY_WEBGL
+        return;
+#else
         // Read name
         StreamReader reader = new StreamReader(Application.persistentDataPath + nameFilePath);
         string playerName = reader.ReadToEnd();
@@ -78,7 +82,9 @@ public class ScoreCounter : MonoBehaviour
 
             // Rewrite scores list
             hsw.WriteScores(scores);
+
         }
 
+#endif
     }
 }

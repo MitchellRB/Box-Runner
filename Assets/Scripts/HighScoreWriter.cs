@@ -9,6 +9,8 @@ public class HighScoreWriter : MonoBehaviour
 {
     public string filePath;
 
+#if !UNITY_WEBGL
+
     public void WriteScores(List<ScoreEntry> scores)
     {
         File.WriteAllText(Application.persistentDataPath + filePath, string.Empty);
@@ -45,4 +47,6 @@ public class HighScoreWriter : MonoBehaviour
 
         return scores;
     }
+
+#endif
 }

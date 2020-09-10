@@ -12,6 +12,8 @@ public class NameEntry : MonoBehaviour
 
     private string playerName;
 
+#if !UNITY_WEBGL
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,4 +71,6 @@ public class NameEntry : MonoBehaviour
         playerName = gameObject.GetComponent<InputField>().text;
         WriteName(playerName);
     }
+
+#endif
 }

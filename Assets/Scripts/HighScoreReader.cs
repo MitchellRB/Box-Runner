@@ -19,6 +19,8 @@ public class HighScoreReader : MonoBehaviour
 {
     public string filePath;
 
+#if !UNITY_WEBGL
+
     public List<ScoreEntry> ReadScores()
     {
         StreamReader reader = new StreamReader(Application.persistentDataPath + filePath);
@@ -47,4 +49,7 @@ public class HighScoreReader : MonoBehaviour
 
         return scores;
     }
+
+#endif
+
 }

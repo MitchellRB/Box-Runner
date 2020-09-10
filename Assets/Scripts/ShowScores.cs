@@ -11,6 +11,8 @@ public class ShowScores : MonoBehaviour
     private List<ScoreEntry> entries;
     private Text text;
 
+#if !UNITY_WEBGL
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,4 +41,5 @@ public class ShowScores : MonoBehaviour
 
         text.text = sb.ToString();
     }
+#endif
 }

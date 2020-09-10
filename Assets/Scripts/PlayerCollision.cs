@@ -52,10 +52,10 @@ public class PlayerCollision : MonoBehaviour
             }
             isDead = true;
 
-            if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
-            {
-                Handheld.Vibrate();
-            }
+#if UNITY_ANDROID || UNITY_IOS
+
+            Handheld.Vibrate();
+#endif
         }
     }
 

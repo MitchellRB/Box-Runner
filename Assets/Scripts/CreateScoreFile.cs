@@ -11,6 +11,9 @@ public class CreateScoreFile : MonoBehaviour
     // Create high score file if it does not exist
     void Start()
     {
+#if UNITY_WEBGL
+        return;
+#else
         if (!File.Exists(Application.persistentDataPath + filePath))
         {
             StreamWriter writer = new StreamWriter(Application.persistentDataPath + filePath);
@@ -20,6 +23,7 @@ public class CreateScoreFile : MonoBehaviour
             }
             writer.Close();
         }
+#endif
     }
 
     // Update is called once per frame
