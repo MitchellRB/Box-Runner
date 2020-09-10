@@ -30,7 +30,7 @@ public class NameEntry : MonoBehaviour
 
     private void OnGUI()
     {
-        if (keyboard.status == TouchScreenKeyboard.Status.Done)
+        if (keyboard != null && keyboard.status == TouchScreenKeyboard.Status.Done)
         {
             playerName = keyboard.text;
             WriteName(playerName);
