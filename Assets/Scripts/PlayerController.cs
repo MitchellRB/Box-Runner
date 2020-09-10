@@ -44,7 +44,9 @@ public class PlayerController : MonoBehaviour
         }
         else if (canJump == false)
         {
-            sinCurvePosition += jumpSpeed * Time.deltaTime * Mathf.Deg2Rad;
+            float endJumpSpeed = jumpSpeed;
+            if (startX == endX) endJumpSpeed *= 0.85f;
+            sinCurvePosition += endJumpSpeed * Time.deltaTime * Mathf.Deg2Rad;
             Vector3 newPos = new Vector3(Mathf.Lerp(startX, endX, sinCurvePosition / Mathf.PI), startYPos + Mathf.Sin(sinCurvePosition) * jumpHeight, 0);
             transform.position = newPos;
         }
