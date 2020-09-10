@@ -8,7 +8,7 @@ public class NameEntry : MonoBehaviour
 {
     public string nameFilepath;
 
-    //private TouchScreenKeyboard keyboard;
+    private TouchScreenKeyboard keyboard;
 
     private string playerName;
 
@@ -28,20 +28,20 @@ public class NameEntry : MonoBehaviour
 
     private void OnGUI()
     {
-        //if (keyboard.status == TouchScreenKeyboard.Status.Done)
-        //{
-        //    playerName = keyboard.text;
-        //    WriteName();
-        //    gameObject.GetComponent<InputField>().text = playerName;
-        //}
+        if (keyboard.status == TouchScreenKeyboard.Status.Done)
+        {
+            playerName = keyboard.text;
+            WriteName(playerName);
+            gameObject.GetComponent<InputField>().text = playerName;
+        }
     }
 
     public void OpenKeyboard()
     {
-        //if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
-        //{
-        //    keyboard = new TouchScreenKeyboard("", TouchScreenKeyboardType.Default, false, false, false, false, "", 10);
-        //}
+        if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            keyboard = new TouchScreenKeyboard("", TouchScreenKeyboardType.Default, false, false, false, false, "", 10);
+        }
     }
 
     public void WriteName(string _name)

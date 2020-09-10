@@ -28,6 +28,7 @@ public class FPSProfiler : MonoBehaviour
         }
         else
         {
+            // Remove oldest frame
             frameTimes.RemoveAt(0);
         }
 
@@ -37,6 +38,6 @@ public class FPSProfiler : MonoBehaviour
             total += t;
         }
 
-        displayText.text = "FPS: " + (1 / (total / frames));
+        displayText.text = "FPS: " + (1 / (total / frames)).ToString("0.00") + " " + frames.ToString();
     }
 }

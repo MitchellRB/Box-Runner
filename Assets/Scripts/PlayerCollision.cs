@@ -41,12 +41,14 @@ public class PlayerCollision : MonoBehaviour
             // Disable control and unlock rigidbody
             pc.enabled = false;
             rb.constraints = RigidbodyConstraints.None;
-            rb.AddTorque(Vector3.left);
+            rb.AddTorque(Vector3.right);
             sc.enabled = false;
 
             if (isDead == false)
             {
                 SendMessage("SaveScore");
+                Time.timeScale = 0.5f;
+                Time.fixedDeltaTime = 0.01f;
             }
             isDead = true;
 
