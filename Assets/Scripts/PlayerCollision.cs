@@ -49,6 +49,11 @@ public class PlayerCollision : MonoBehaviour
                 SendMessage("SaveScore");
             }
             isDead = true;
+
+            if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+                Handheld.Vibrate();
+            }
         }
     }
 
