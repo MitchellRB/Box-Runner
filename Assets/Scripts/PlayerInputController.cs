@@ -24,7 +24,7 @@ public class PlayerInputController : MonoBehaviour
     void Update()
     {
 
-        if (useScreen && Input.GetMouseButton(0) && Input.mousePosition.y < Screen.height && Input.mousePosition.y > Screen.height * 3 / 4)
+        if (useScreen && Input.GetMouseButton(0) && Input.mousePosition.y < Screen.height && Input.mousePosition.y > Screen.height * 2 / 3)
         {
             OnUp();
             return;

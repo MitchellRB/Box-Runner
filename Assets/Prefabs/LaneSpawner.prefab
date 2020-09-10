@@ -67,6 +67,9 @@ MonoBehaviour:
   - spawnObject: {fileID: 2724022497959720085, guid: a21cef923976ead45ad3201ebad2125a,
       type: 3}
     offset: {x: 0, y: 0.25, z: 0}
+  - spawnObject: {fileID: 2245418614294452622, guid: 7bb1c0de1291bd84aaa8b7e40a6edde6,
+      type: 3}
+    offset: {x: 0, y: 1.51, z: 0}
   spawnPositions:
   - {x: -8, y: 0, z: 170}
   - {x: -4, y: 0, z: 170}
@@ -74,4 +77,4 @@ MonoBehaviour:
   - {x: 4, y: 0, z: 170}
   - {x: 8, y: 0, z: 170}
   spwanTimeMin: 0.5
-  spwanTimeMax: 2
+  spwanTimeMax: 1.5

@@ -33,7 +33,7 @@ public class ObstacleSpwaner : MonoBehaviour
         if (timer > spwanTime)
         {
             int objectIndex = Random.Range(0, obstacleList.Count);
-            Instantiate(obstacleList[objectIndex].spawnObject, spawnPositions[Random.Range(0, spawnPositions.Count)] + obstacleList[objectIndex].offset,Quaternion.identity);
+            Instantiate(obstacleList[objectIndex].spawnObject, spawnPositions[Random.Range(0, spawnPositions.Count)] + obstacleList[objectIndex].offset, obstacleList[objectIndex].spawnObject.transform.rotation);
             NewSpawnTime();
             timer = 0;
         }

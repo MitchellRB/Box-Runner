@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 315227460}
   - component: {fileID: 315227459}
   - component: {fileID: 315227458}
+  - component: {fileID: 315227463}
   m_Layer: 5
   m_Name: InputField
   m_TagString: Untagged
@@ -435,6 +436,18 @@ RectTransform:
   m_AnchoredPosition: {x: -0.0000076294, y: 49.7}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &315227463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315227457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71ce290f6993434fbb73e35e07e2a4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &436017664
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,6 +461,7 @@ GameObject:
   - component: {fileID: 436017668}
   - component: {fileID: 436017667}
   - component: {fileID: 436017666}
+  - component: {fileID: 436017670}
   m_Layer: 5
   m_Name: ScoresButton
   m_TagString: Untagged
@@ -579,6 +593,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 436017664}
   m_CullTransparentMesh: 0
+--- !u!114 &436017670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436017664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71ce290f6993434fbb73e35e07e2a4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &552207812
 GameObject:
   m_ObjectHideFlags: 0
