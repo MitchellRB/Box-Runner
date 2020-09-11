@@ -43,6 +43,12 @@ public class PlayerInputController : MonoBehaviour
         }
     }
 
+    public void StopControls()
+    {
+        controls.Disable();
+        controls.Dispose();
+    }
+
     void OnLeft()
     {
         SendMessage("JumpLeft");

@@ -47,6 +47,7 @@ public class PlayerCollision : MonoBehaviour
             if (isDead == false)
             {
                 SendMessage("SaveScore");
+                SendMessage("StopControls");
                 Time.timeScale = 0.5f;
                 Time.fixedDeltaTime = 0.01f;
             }

@@ -2,6 +2,11 @@
 
 ## Changelog
 ---
+
+## [1.0.1] - 2020-09-10
+### Fixed
+- Issue involving cleanup of input manager
+
 ## [1.0.0] - 2020-09-10
 ### Added
 - Menu controller support
