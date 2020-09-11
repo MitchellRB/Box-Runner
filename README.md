@@ -2,6 +2,25 @@
 
 ## Changelog
 ---
+## [1.0.0] - 2020-09-10
+### Added
+- Menu controller support
+    - Button images
+- Wide obstacle
+- Name entry for highscores
+- Touch input overlay on start
+- Slow-motion on player death
+
+### Changed
+- Lane texture
+- Jump height and speed
+
+### Fixed
+- High scores on mobile
+
+### Removed
+- High scores on web
+
 ## [0.6.0] - 2020-09-09
 ### Added
 - Scoreboard
