@@ -23,7 +23,7 @@ public class PlayerInputController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        // Touch input with old input manager
         if (useScreen && Input.GetMouseButton(0) && Input.mousePosition.y < Screen.height && Input.mousePosition.y > Screen.height * 2 / 3)
         {
             OnUp();
@@ -43,6 +43,7 @@ public class PlayerInputController : MonoBehaviour
         }
     }
 
+    // Destroy the input object whne th player dies
     public void StopControls()
     {
         controls.Disable();

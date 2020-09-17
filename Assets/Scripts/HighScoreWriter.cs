@@ -11,8 +11,10 @@ public class HighScoreWriter : MonoBehaviour
 
 #if !UNITY_WEBGL
 
+    // Write a sorted scores list to file
     public void WriteScores(List<ScoreEntry> scores)
     {
+        // Remove text in file
         File.WriteAllText(Application.persistentDataPath + filePath, string.Empty);
 
         scores.Sort(scores[0].Compare);
@@ -27,12 +29,15 @@ public class HighScoreWriter : MonoBehaviour
         writer.Close();
     }
 
+    // Reset everything to blank scores
     public void ResetScores()
     {
         WriteScores(BlankScores());
-        gameObject.GetComponent<ShowScores>().ChangeDisplay(BlankScores());
+        if (gameObject.GetComponent<ShowScores>() != null)
+            gameObject.GetComponent<ShowScores>().ChangeDisplay(BlankScores());
     }
 
+    // Generate a set of blank scores
     public List<ScoreEntry> BlankScores()
     {
         List<ScoreEntry> scores = new List<ScoreEntry>();

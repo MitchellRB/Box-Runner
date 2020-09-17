@@ -25,9 +25,9 @@ public class ControllerButton : MonoBehaviour
     void Start()
     {
         button = gameObject.GetComponent<Button>();
-
+        
+        // Add to input system
         controls = new Controls();
-
         switch (inputButton)
         {
             case FaceButtons.A:
@@ -45,7 +45,6 @@ public class ControllerButton : MonoBehaviour
             default:
                 break;
         }
-
         controls.Enable();
     }
 
@@ -55,6 +54,7 @@ public class ControllerButton : MonoBehaviour
         
     }
 
+    // Click button when called by Input
     public void OnButtonPress(InputAction.CallbackContext context)
     {
         button.onClick.Invoke();

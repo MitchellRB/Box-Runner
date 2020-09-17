@@ -18,6 +18,7 @@ public class PlayerCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Get components
         pc = gameObject.GetComponent<PlayerController>();
         rb = gameObject.GetComponent<Rigidbody>();
         sc = gameObject.GetComponent<ScoreCounter>();
@@ -29,6 +30,7 @@ public class PlayerCollision : MonoBehaviour
     {
         if (isDead)
         {
+            // Push th player backwards when dead
             rb.AddForce(Vector3.back * 10);
         }
     }
@@ -54,7 +56,7 @@ public class PlayerCollision : MonoBehaviour
             isDead = true;
 
 #if UNITY_ANDROID || UNITY_IOS
-
+            // Vibrate device on mobile
             Handheld.Vibrate();
 #endif
         }

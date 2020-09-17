@@ -31,6 +31,7 @@ public class HighScoreReader : MonoBehaviour
             ScoreEntry newEntry;
             newEntry.name = string.Empty;
 
+            // Read player name
             while (reader.Peek() != ',')
             {
                 newEntry.name += (char)reader.Read();
@@ -38,8 +39,8 @@ public class HighScoreReader : MonoBehaviour
 
             reader.Read(); // Skip over the separation comma
 
+            // Read score and convet to int
             string scoreStr = reader.ReadLine();
-
             Int32.TryParse(scoreStr,out newEntry.score);
 
             scores.Add(newEntry);

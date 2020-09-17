@@ -57,7 +57,6 @@ public class ScoreCounter : MonoBehaviour
         if (score > scores[9].score)
         {
             ScoreEntry newScore;
-            // TODO: Get name from player
             if (playerName != string.Empty)
             {
                 newScore.name = playerName;

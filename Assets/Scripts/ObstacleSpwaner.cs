@@ -43,6 +43,7 @@ public class ObstacleSpwaner : MonoBehaviour
         }
     }
 
+    // Generate a new delay for the next spawn
     private void NewSpawnTime()
     {
         spwanTime = Random.Range(spwanTimeMin, spwanTimeMax);

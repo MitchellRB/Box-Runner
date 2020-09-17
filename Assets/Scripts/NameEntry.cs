@@ -38,6 +38,8 @@ public class NameEntry : MonoBehaviour
         }
     }
 
+    // Open keyboard on mobile devices
+    // Not used, since the input field opens a keyboard anyway
     public void OpenKeyboard()
     {
         if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
@@ -46,11 +48,12 @@ public class NameEntry : MonoBehaviour
         }
     }
 
+    // Write a name to the name file
     public void WriteName(string _name)
     {
         StreamWriter writer = new StreamWriter(Application.persistentDataPath + nameFilepath);
 
-        // Strip commas
+        // Replace commas with spaces
         var chars = _name.ToCharArray();
         string writtenName = string.Empty;
         for (int i = 0; i < chars.Length; i++)
