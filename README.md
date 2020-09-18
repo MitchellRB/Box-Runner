@@ -1,5 +1,9 @@
 # Box Runner
 
+Made using Unity 2019.3.6
+Requres Android SDK to build for Android
+Builds for Windows, WebGL and Android platoforms without modification
+
 ## Changelog
 ---
 
